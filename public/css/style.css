@@ -265,7 +265,7 @@ section.main-contact form textarea {
 }
 
 .root_daum_roughmap .wrap_map {
-  height: 100%;
+  height: 100% !important;
   width: 100%;
 }
 
@@ -279,3 +279,11 @@ section.main-contact form textarea {
 
 
 /* about page */
+
+section.about-section {
+  display: flex;
+}
+
+section.about-section > img {
+  width: 25vw;
+}
