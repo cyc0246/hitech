@@ -51,7 +51,7 @@ h1 {
   font-size: 32px;
   line-height: 1.2;
   font-weight: bold;
-  color: #044A7C;
+  color: #0F6AAC;
 }
 
 .button {
@@ -282,8 +282,16 @@ section.main-contact form textarea {
 
 section.about-section {
   display: flex;
+  min-height: 100vh;
+  align-items: center;
+  gap: 80px;
 }
 
 section.about-section > img {
-  width: 25vw;
+  width: 30vw;
+  aspect-ratio: 1/1;
+}
+
+section.about-section .about-text p:nth-of-type(1) {
+  margin: 16px 0;
 }
