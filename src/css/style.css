@@ -398,3 +398,100 @@ section.process-description article img {
   border-radius: 32px;
   margin: 28px 0 60px;
 }
+
+
+/* product 페이지 */
+
+.product-wrapper section:first-child article > div {
+  display: flex;
+  max-width: 1100px;
+  height: 100vh;
+  gap: 60px;
+  place-items: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.product-wrapper section:first-child article:nth-child(even) {
+  background-color: #F1F3F8;
+}
+
+.product-wrapper section:first-child article:nth-child(even) div {
+  flex-direction: row-reverse;
+}
+
+.product-wrapper section:first-child article .product-text {
+  width: calc(50% - 30px);
+  min-width: 520px;
+}
+
+
+.product-wrapper section:first-child article .product-text h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 8px 0 20px;
+}
+
+.product-wrapper section:first-child article .product-text p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.product-wrapper section:first-child article .product-text p:last-of-type {
+  margin-bottom: 40px;
+}
+
+.product-wrapper section:first-child article .product-text ol li {
+  display: flex;
+  gap: 8px;
+  width: 360px;
+  height: 20px;
+  background-color: #F1F3F8;
+  margin-top: 12px;
+  margin-left: 8px;
+  border-radius: 18px;
+  padding: 8px;
+}
+
+.product-wrapper section article:nth-of-type(even) .product-text ol li {
+  background-color: #fff;
+}
+
+.product-wrapper section:first-child article .product-text ol li h3 {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #0F6AAC;
+}
+
+.product-wrapper section article:nth-of-type(even) .product-text ol li h3 {
+  background-color: #F1F3F8;
+}
+
+.product-wrapper section:first-child article img {
+  width: calc(50% - 30px);
+  min-width: 520px;
+}
+
+.product-wrapper section:last-child article {
+  max-width: 1100px;
+  margin: 100px auto;
+}
+
+.product-wrapper section:last-child article ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.product-wrapper section:last-child article ul li {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #ccc;
+}
