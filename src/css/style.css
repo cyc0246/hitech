@@ -265,6 +265,7 @@ section.main-contact form textarea {
 }
 
 .root_daum_roughmap .wrap_map {
+  position: relative;
   height: 100% !important;
   width: 100%;
 }
@@ -494,4 +495,78 @@ section.process-description article img {
   width: 100%;
   aspect-ratio: 1 / 1;
   background-color: #ccc;
+}
+
+
+/* contact page */
+
+.contact_map {
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin: 120px auto 100px;
+}
+
+.contact_map .root_daum_roughmap {
+  position: relative;
+  height: 300px !important;
+  width: 100vw;
+  max-width: 1100px;
+}
+
+section.main-contact img {
+  width: calc(50% - 30px);
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.contact_info_wrap {
+  display: flex;
+  gap: 60px;
+  margin: 120px auto 80px;
+}
+
+.contact_info_wrap h1 {
+  width: calc(50% - 30px);
+}
+
+.contact_info_wrap .contact_info {
+  width: calc(50% - 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact_info .contact_info_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact_info .contact_info_row div {
+  width: 240px;
+}
+
+.contact_info > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.contact_info div img {
+  width: 100px;
+  height: 100px;
+}
+
+.contact_info div p {
+  font-size: 16px;
+  margin: 20px 0 0;
+}
+
+.contact_info div h3 {
+  font-size: 16px;
+  font-weight: 600;
 }
