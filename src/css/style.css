@@ -289,7 +289,7 @@ section.main-contact form textarea {
 
 section.about-section {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 72px);
   align-items: center;
   gap: 80px;
 }
@@ -310,7 +310,7 @@ section.process-section {
   display: flex;
   align-items: center;
   gap: 60px;
-  margin: 130px 0 60px;
+  margin: 100px 0 60px;
 }
 
 section.process-section img {
@@ -382,6 +382,11 @@ section.process-description article {
   margin-bottom: 52px;
 }
 
+section.process-description article:last-of-type {
+  border: none;
+  margin-bottom: 0;
+}
+
 section.process-description article h2 {
   font-size: 22px;
   line-height: 1.35;
@@ -404,6 +409,10 @@ section.process-description article img {
   aspect-ratio: 55 / 17;
   border-radius: 32px;
   margin: 28px 0 60px;
+}
+
+section.process-description article:last-of-type img {
+  margin-bottom: 0;
 }
 
 
@@ -561,7 +570,7 @@ section.main-contact img {
   width: 240px;
 }
 
-.contact_info > div {
+.contact_info .contact_info_element {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -625,7 +634,7 @@ section.main-contact img {
 
   section.hero {
     min-height: auto;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   section.hero > div {
@@ -638,7 +647,7 @@ section.main-contact img {
   
   section.hero > div:first-child {
     width: calc(100% - 80px);
-    padding: 120px 40px 56px;
+    padding: 8vh 40px 12vh;
   }
   
   section.hero > div:first-child p {
@@ -713,40 +722,21 @@ section.main-contact img {
   /* about page */
 
   section.about-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 0;
+    gap: 32px;
   }
   
   section.about-section > img {
-    width: 90%;
-  }
-
-  section.about-section .about-text h1 {
-    text-align: center;
-  }
-  
-  section.about-section .about-text p {
-    text-align: center;
+    width: 40vw;
   }
 
   /* process page */
   section.process-section {
-    flex-direction: column;
-    gap: 40px;
-    margin: 120px 0 60px;
+    gap: 32px;
+    margin: 100px 0 40px;
   }
   
   section.process-section img {
-    width: 100%;
-    aspect-ratio: 13 / 10;
-    border-radius: 8px;
-  }
-  
-  section.process-section .process-text {
-    text-align: center;
+    width: calc(50% - 20px);
   }
   
   section.process-section .process-text h1 {
@@ -815,7 +805,6 @@ section.main-contact img {
   }
   
   section.process-description article img {
-    aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: 16px;
     margin: 20px 0 40px;
@@ -899,7 +888,6 @@ section.main-contact img {
   
   .contact_info_wrap {
     display: flex;
-    flex-direction: column;
     gap: 32px;
     margin: 60px auto;
     justify-content: center;
@@ -907,28 +895,22 @@ section.main-contact img {
   }
   
   .contact_info_wrap h1 {
-    width: 100%;
-    text-align: center;
+    width: 35%;
+    text-align: left;
   }
   
   .contact_info_wrap .contact_info {
-    width: 100%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
   
-  .contact_info .contact_info_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
   .contact_info .contact_info_row div {
-    width: 240px;
+    width: 100%;
   }
   
-  .contact_info > div {
+  .contact_info .contact_info_element {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -949,5 +931,220 @@ section.main-contact img {
   
   .contact_info div h3 {
     font-size: 14px;
+  }
+}
+
+@media (max-width:640px) and (min-width:0) {
+  h1 {
+    font-size: 27px;
+  }
+  
+  p {
+    font-size: 17px;
+  }
+
+  .button {
+    width: 180px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 15px;
+  }
+
+  .wrapper {
+    width: calc(100% - 56px);
+    padding: 0 28px;
+  }
+
+  /* main page */
+
+  section.hero {
+    min-height: auto;
+    flex-direction: column-reverse;
+  }
+  
+  section.hero > div:first-child {
+    width: calc(100% - 56px);
+    padding: 8vh 28px 12vh;
+  }
+
+  section.main-product {
+    width: calc(100vw - 56px);
+    left: 0;
+    transform: translateX(-28px);
+    padding: 60px 28px 80px;
+  }
+
+  section.main-contact {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  section.main-contact > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  section.main-contact div > p {
+    margin: 12px 0 40px;
+  }
+
+  section.main-contact form {
+    width: 100%;
+  }
+
+  section.main-contact form label {
+    font-size: 16px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+  }
+
+  section.main-contact form button {
+    margin: 0 auto;
+  }
+
+  .root_daum_roughmap .wrap_map {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .smile-banner {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 3;
+    margin: 0 0 60px;
+  }
+
+  /* about page */
+
+  section.about-section {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 120px);
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 0;
+  }
+  
+  section.about-section > img {
+    width: 90%;
+  }
+
+  section.about-section .about-text h1 {
+    text-align: center;
+  }
+  
+  section.about-section .about-text p {
+    text-align: center;
+  }
+
+  /* process page */
+  section.process-section {
+    flex-direction: column;
+    gap: 40px;
+    margin: 80px 0 60px;
+  }
+  
+  section.process-section img {
+    width: 100%;
+    aspect-ratio: 13 / 10;
+    border-radius: 8px;
+  }
+  
+  section.process-section .process-text {
+    text-align: center;
+  }
+
+  section.process-order {
+    width: calc(100vw - 56px);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 60px 28px;
+    background: #F1F3F8;
+  }
+  
+  section.process-order ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 20px;
+  }
+
+  section.process-description article img {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* product page */
+
+  .product-wrapper section:first-child article > div {
+    height: auto;
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 28px;
+  }
+
+  .product-wrapper section:last-child article {
+    width: calc(100% - 56px);
+  }
+
+  /* contact page */
+  
+  .contact_info_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 60px auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact_info_wrap h1 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .contact_info_wrap .contact_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact_info .contact_info_row div {
+    width: 85%;
+  }
+
+  .contact_info .contact_info_element {
+    width: 85%;
+    position: relative;
+    left: 7.5%;
+    justify-content: start;
+    flex-direction: row;
+    text-align: left;
+    gap: 24px;
+    margin: 12px 0;
+  }
+
+  .contact_info .contact_info_row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact_info div img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width:480px) and (min-width:0) {
+  .contact_info .contact_info_row div {
+    width: 100%;
+  }
+
+  .contact_info .contact_info_element {
+    width: 100%;
+    left: 0;
   }
 }
