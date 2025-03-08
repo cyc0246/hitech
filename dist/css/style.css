@@ -106,21 +106,33 @@ header img:hover {
 header nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 40px;
 }
 
-header nav ul {
+header nav .nav-menu {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 24px;
 }
 
-header nav ul li a {
+header nav .nav-menu li a {
   color: #044a7c;
 }
 
-header nav ul li a:hover {
+header nav .nav-menu li a:hover {
   text-decoration: underline;
+}
+
+/* 햄버거 버튼 스타일 */
+.menu-toggle {
+  display: none;
+  width: 20px;
+  height: 20px;
+  background: url(../img/m_header.png) no-repeat;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
 }
 
 /* footer */
@@ -441,7 +453,6 @@ section.process-description article:last-of-type img {
   min-width: 520px;
 }
 
-
 .product-wrapper section:first-child article .product-text h2 {
   font-size: 20px;
   font-weight: 600;
@@ -497,8 +508,8 @@ section.process-description article:last-of-type img {
 }
 
 .product-wrapper section:first-child article img {
-  width: calc(50% - 30px);
-  min-width: 520px;
+  width: 100%;
+  aspect-ratio: 1/1;
 }
 
 .product-wrapper section:last-child article {
@@ -519,6 +530,109 @@ section.process-description article:last-of-type img {
   background-color: #ccc;
 }
 
+.product-wrapper .metal-gallery {
+  display: grid;
+  width: calc(50% - 30px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.product-gallery {
+  height: auto;
+  overflow-y: auto;
+}
+
+/* thermo 슬라이드 */
+
+.thermo-slide {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: calc(50% - 30px);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.thermo-slide .slide-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.thermo-slide ul {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.thermo-slide li {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 17px;
+  z-index: 10;
+}
+
+.slide-button.prev {
+  left: 12px;
+}
+
+.slide-button.next {
+  right: 12px;
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+/* 모달 닫기 버튼 */
+.modal .close-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  font-size: 24px;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+}
 
 /* contact page */
 
@@ -813,57 +927,13 @@ section.main-contact img {
   /* product page */
 
   .product-wrapper section:first-child article > div {
-    height: auto;
-    flex-direction: column;
-    gap: 40px;
-    padding: 80px 40px;
-  }
-  
-  .product-wrapper section:first-child article:nth-child(even) div {
-    flex-direction: column;
-  }
-  
-  .product-wrapper section:first-child article .product-text {
-    width: 100%;
-    min-width: 0;
-  }
-  
-  
-  .product-wrapper section:first-child article .product-text h2 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 4px 0 20px;
-  }
-  
-  .product-wrapper section:first-child article .product-text p {
-    margin-bottom: 12px;
-  }
-  
-  .product-wrapper section:first-child article .product-text p:last-of-type {
-    margin-bottom: 24px;
-  }
-  
-  .product-wrapper section:first-child article .product-text ol li {
-    width: calc(100% - 32px);
-    margin-left: 8px;
-  }
-  
-  .product-wrapper section:first-child article img {
-    width: 100%;
-    min-width: 0;
-  }
-  
-  .product-wrapper section:last-child article {
+    display: flex;
     width: calc(100% - 80px);
-    max-width: 1100px;
-    margin: 60px auto;
   }
-  
-  .product-wrapper section:last-child article ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 20px;
+
+  .product-wrapper section:first-child article .product-text {
+    width: calc(50% - 30px);
+    min-width: 0;
   }
 
   /* contact page */
@@ -934,6 +1004,78 @@ section.main-contact img {
   }
 }
 
+@media (max-width: 900px) and (min-width:0) {
+
+  /* product page */
+  .full-container {
+    overflow: auto; /* 모바일에서는 일반 스크롤 사용 */
+  }
+
+  .product-wrapper section:first-child article > div {
+    height: auto;
+    flex-direction: column;
+    gap: 40px;
+    padding: 80px 40px;
+  }
+  
+  .product-wrapper section:first-child article:nth-child(even) div {
+    flex-direction: column;
+  }
+  
+  .product-wrapper section:first-child article .product-text {
+    width: 100%;
+    min-width: 0;
+  }
+  
+  
+  .product-wrapper section:first-child article .product-text h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 4px 0 20px;
+  }
+  
+  .product-wrapper section:first-child article .product-text p {
+    margin-bottom: 12px;
+  }
+  
+  .product-wrapper section:first-child article .product-text p:last-of-type {
+    margin-bottom: 24px;
+  }
+  
+  .product-wrapper section:first-child article .product-text ol li {
+    width: calc(100% - 32px);
+    margin-left: 8px;
+  }
+  
+  .product-wrapper section:first-child article img {
+    width: 100%;
+    min-width: 0;
+  }
+  
+  .product-wrapper section:last-child article {
+    width: calc(100% - 80px);
+    max-width: 1100px;
+    margin: 60px auto;
+  }
+  
+  .product-wrapper section:last-child article ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  /* thermo 슬라이드 */
+  .thermo-slide {
+    width: 100%;
+  }
+
+  /* metal */
+  .product-wrapper .metal-gallery {
+    width: 100%;
+  }
+}
+
 @media (max-width:640px) and (min-width:0) {
   h1 {
     font-size: 27px;
@@ -953,6 +1095,38 @@ section.main-contact img {
   .wrapper {
     width: calc(100% - 56px);
     padding: 0 28px;
+  }
+
+  /* header */
+  
+  header img {
+    display: block;
+    width: 72px;
+    height: auto;
+  }
+
+  header nav {
+    padding: 16px 20px;
+  }
+
+  .menu-toggle {
+    display: block; /* 햄버거 버튼 보이기 */
+  }
+
+  header nav .nav-menu {
+    display: none; /* 기본적으로 메뉴 숨김 */
+    flex-direction: column;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    padding: 8px 0 20px;
+  }
+
+  .nav-menu.active {
+    display: flex; /* 햄버거 버튼 클릭 시 나타남 */
   }
 
   /* main page */

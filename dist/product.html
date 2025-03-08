@@ -13,7 +13,8 @@
     <header>
         <nav>
             <a href="./index.html"><img src="./img/logo.png" alt="logo"></a>
-            <ul>
+            <button class="menu-toggle"></button>
+            <ul class="nav-menu">
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/process.html">Process</a></li>
                 <li><a href="#"><u>Product</u></a></li>
@@ -23,8 +24,8 @@
     </header>
 
     <div class="product-wrapper">
-        <section>
-            <article class="thermo-splint">
+        <section class="full-container">
+            <article class="thermo-splint full-page">
                 <div>
                     <div class="product-text">
                         <h1>Thermo Splint</h1>
@@ -54,11 +55,30 @@
                             </li>
                         </ol>
                     </div>
-                    <img src="./img/product/thermo-splint.png" alt="thermo splint">
+                    <ul class="thermo-slide">
+                      <button class="slide-button prev">&#10094;</button>
+                      <div class="slide-container">
+                        <ul>
+                          <li>
+                              <img src="./img/product/thermo-splint-01.png" alt="thermo splint">
+                          </li>
+                          <li>
+                              <img src="./img/product/thermo-splint-02.png" alt="thermo splint">
+                          </li>
+                          <li>
+                              <img src="./img/product/thermo-splint-03.png" alt="thermo splint">
+                          </li>
+                          <li>
+                              <img src="./img/product/thermo-splint-04.png" alt="thermo splint">
+                          </li>
+                        </ul>
+                      </div>
+                      <button class="slide-button next">&#10095;</button>
+                    </ul>
                 </div>
             </article>
 
-            <article class="metal-printing">
+            <article class="metal-printing full-page">
                 <div>
                     <div class="product-text">
                         <h1>Metal Printing System</h1>
@@ -87,10 +107,29 @@
                             </li>
                         </ol>
                     </div>
-                    <img src="./img/product/thermo-splint.png" alt="thermo splint">
+                    <ul class="metal-gallery">
+                        <li>
+                            <img src="./img/product/metal-printing-01.png" alt="metal printing system">
+                        </li>
+                        <li>
+                            <img src="./img/product/metal-printing-02.png" alt="metal printing system">
+                        </li>
+                        <li>
+                            <img src="./img/product/metal-printing-03.png" alt="metal printing system">
+                        </li>
+                        <li>
+                            <img src="./img/product/metal-printing-04.png" alt="metal printing system">
+                        </li>
+                    </ul>
                 </div>
             </article>
         </section>
+
+        <!-- 모달 창 추가 -->
+        <div class="modal" id="image-modal">
+            <button class="close-button">&times;</button>
+            <img id="modal-image" src="" alt="Expanded View">
+        </div>
         
         <section class="product-gallery">
             <article>
@@ -124,6 +163,12 @@
                 </ul>
             </article>
         </section>
+    </div>
+
+    <!-- 모달 창 추가 -->
+    <div class="modal" id="image-modal">
+      <button class="close-button">&times;</button>
+      <img id="modal-image" src="" alt="Expanded View">
     </div>
 
     <footer>
