@@ -527,7 +527,6 @@ section.process-description article:last-of-type img {
 .product-wrapper section:last-child article ul li {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #ccc;
 }
 
 .product-wrapper .metal-gallery {
@@ -540,6 +539,11 @@ section.process-description article:last-of-type img {
 .product-gallery {
   height: auto;
   overflow-y: auto;
+}
+
+.product-gallery ul li img {
+  width: 100%;
+  border-radius: 16px;
 }
 
 /* thermo 슬라이드 */
@@ -1248,6 +1252,26 @@ section.main-contact img {
 
   section.process-description article img {
     aspect-ratio: 3 / 2;
+  }
+
+  .process-description article:nth-of-type(1) img {
+    content: url("../img/process/fixed-retainer-m.png"); /* 모바일용 이미지 */
+  }
+
+  .process-description article:nth-of-type(2) img {
+    content: url("../img/process/removable-retainer-m.png"); /* 모바일용 이미지 */
+  }
+
+  .process-description article:nth-of-type(3) img {
+    content: url("../img/process/1way-m.png") /* 모바일용 이미지 */
+  }
+
+  .process-description article:nth-of-type(4) img {
+    content: url("../img/process/2way-m.png"); /* 모바일용 이미지 */
+  }
+
+  .process-description article:nth-of-type(5) img {
+    content: url("../img/process/functional-appliance-m.png"); /* 모바일용 이미지 */
   }
 
   /* product page */
