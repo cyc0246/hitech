@@ -576,21 +576,22 @@ section.process-description article:last-of-type img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   border-radius: 50%;
-  padding: 10px 15px;
   cursor: pointer;
-  font-size: 17px;
   z-index: 10;
 }
 
 .slide-button.prev {
+  background: url(../img/product/prev.png) no-repeat;
+  background-size: cover;
   left: 12px;
 }
 
 .slide-button.next {
+  background: url(../img/product/next.png) no-repeat;
+  background-size: cover;
   right: 12px;
 }
 
@@ -626,10 +627,9 @@ section.process-description article:last-of-type img {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: white;
+  background: url(../img/product/close.png) no-repeat;
+  background-size: cover;
   border: none;
-  font-size: 24px;
-  line-height: 40px;
   cursor: pointer;
   border-radius: 50%;
 }
