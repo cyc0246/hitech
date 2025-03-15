@@ -116,12 +116,44 @@ header nav .nav-menu {
   gap: 24px;
 }
 
+header nav .nav-menu li {
+  position: relative;
+}
+
 header nav .nav-menu li a {
+  padding: 16px 0;
   color: #3F88BD;
 }
 
 header nav .nav-menu li a:hover {
   text-decoration: underline;
+}
+
+.sub-menu {
+  display: none;
+  width: 120px;
+  padding: 20px 12px;
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 12px);
+  left: -48px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .9);
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,.2));
+  border-radius: 8px;
+}
+
+.sub-menu li {
+  margin-bottom: 10px;
+}
+
+.sub-menu li:last-of-type {
+  margin-bottom: 0;
+}
+
+header nav .nav-menu li:nth-of-type(3):hover .sub-menu,
+header nav .nav-menu li:nth-of-type(3) .sub-menu:hover {
+    display: block;
 }
 
 /* 햄버거 버튼 스타일 */
@@ -242,7 +274,7 @@ section.main-product div.card-wrap div.card h2 {
 section.main-contact {
   display: flex;
   gap: 60px;
-  margin: 60px 0;
+  margin: 40px 0;
 }
 
 section.main-contact > div {
@@ -663,17 +695,26 @@ section.process-description article:last-of-type img {
 /* contact page */
 
 .contact_map {
+  position: relative;
   display: block;
   width: 100%;
   height: 300px;
   margin: 120px auto 100px;
 }
 
-.contact_map .root_daum_roughmap {
-  position: relative;
-  height: 300px !important;
-  width: 100vw;
-  max-width: 1100px;
+.contact_map div img {
+  width: 100%;
+  aspect-ratio: 11 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.map-name {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  font-size: 18px;
+  color: #3F88BD;
 }
 
 section.main-contact img {
@@ -683,55 +724,63 @@ section.main-contact img {
 }
 
 .contact_info_wrap {
-  display: flex;
-  gap: 60px;
+  display: block;
   margin: 120px auto 80px;
   align-items: center;
 }
 
 .contact_info_wrap h1 {
-  width: calc(50% - 30px);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .contact_info_wrap .contact_info {
-  width: calc(50% - 30px);
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.contact_info .contact_info_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.contact_info .contact_info_row div {
-  width: 240px;
-}
-
-.contact_info .contact_info_element {
+.contact_info_wrap .contact_info .contact_info_element {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 12px 0;
+  background: linear-gradient(to bottom, #F0F6FF 0%, #F5F9FF 100%);
+  border-radius: 20px;
+  padding: 28px 32px;
 }
 
-.contact_info div img {
-  width: 100px;
-  height: 100px;
+.contact_info_element_wrap {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+.contact_info_wrap .contact_info > div img {
+  width: 40px;
+  height: 40px;
 }
 
 .contact_info div p {
   font-size: 16px;
+  color: #3f88bd;
   margin: 20px 0 0;
 }
 
 .contact_info div h3 {
   font-size: 16px;
   font-weight: 600;
+}
+
+.contact_info div a {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
 }
 
 
@@ -967,12 +1016,8 @@ section.main-contact img {
   .contact_map {
     display: block;
     width: 100%;
-    height: 300px;
-    margin: 80px auto 60px;
-  }
-  
-  .contact_map .root_daum_roughmap {
-    width: 100%;
+    height: 100%;
+    margin: 80px auto 40px;
   }
   
   section.main-contact img {
@@ -981,43 +1026,9 @@ section.main-contact img {
     object-fit: cover;
     border-radius: 8px;
   }
-  
+
   .contact_info_wrap {
-    display: flex;
-    gap: 32px;
-    margin: 60px auto;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .contact_info_wrap h1 {
-    width: 35%;
-    text-align: left;
-  }
-  
-  .contact_info_wrap .contact_info {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .contact_info .contact_info_row div {
-    width: 100%;
-  }
-  
-  .contact_info .contact_info_element {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 12px 0;
-  }
-  
-  .contact_info div img {
-    width: 88px;
-    height: 88px;
+    margin-top: 60px;
   }
   
   .contact_info div p {
@@ -1148,11 +1159,38 @@ section.main-contact img {
     width: 100%;
     background: #fff;
     text-align: center;
-    padding: 8px 0 20px;
+    padding: 8px 0;
+    gap: 8px;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  header nav .nav-menu li {
+    width: 100%;
+  }
+
+  header nav .nav-menu li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
   }
 
   .nav-menu.active {
     display: flex; /* 햄버거 버튼 클릭 시 나타남 */
+  }
+
+  .sub-menu {
+    display: block;
+    width: 100vw;
+    padding: 8px 0;
+    position: relative;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+    filter: none;
+    border-radius: 0;
+    margin-top: 12px;
   }
 
   /* main page */
@@ -1324,41 +1362,40 @@ section.main-contact img {
   }
 
   /* contact page */
-  
+
   .contact_info_wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    margin: 60px auto;
-    justify-content: center;
-    align-items: center;
+    margin-top: 40px;
+  }
+
+  .contact_map div img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 93% center;
+    border-radius: 8px;
+  }
+
+  .map-name {
+    font-size: 16px;
+    bottom: 16px;
+    left: 20px;
   }
   
   .contact_info_wrap h1 {
     width: 100%;
     text-align: center;
+    margin-bottom: 24px;
   }
   
   .contact_info_wrap .contact_info {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
   }
 
-  .contact_info .contact_info_row div {
-    width: 85%;
-  }
-
   .contact_info .contact_info_element {
-    width: 85%;
-    position: relative;
-    left: 7.5%;
-    justify-content: start;
-    flex-direction: row;
-    text-align: left;
-    gap: 24px;
-    margin: 12px 0;
+    width: calc(100% - 64px);
+    gap: 8px;
   }
 
   .contact_info .contact_info_row {
@@ -1369,16 +1406,5 @@ section.main-contact img {
   .contact_info div img {
     width: 80px;
     height: 80px;
-  }
-}
-
-@media (max-width:480px) and (min-width:0) {
-  .contact_info .contact_info_row div {
-    width: 100%;
-  }
-
-  .contact_info .contact_info_element {
-    width: 100%;
-    left: 0;
   }
 }
