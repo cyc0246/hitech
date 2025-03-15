@@ -17,7 +17,14 @@
             <ul class="nav-menu">
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/process.html">Process</a></li>
-                <li><a href="/product.html">Product</a></li>
+                <li>
+                    <a href="/product.html">Product</a>
+                    <ul class="sub-menu">
+                        <li><a href="/product.html#thermo-splint">Thermo Splint</a></li>
+                        <li><a href="/product.html#metal-printing">Metal Printing</a></li>
+                        <li><a href="/product.html#anti-snoring">Anti Snoring</a></li>
+                    </ul>
+                </li>
                 <li><a href="#"><u>Contact</u></a></li>
             </ul>
         </nav>
@@ -25,8 +32,10 @@
 
     <div class="wrapper">
         <section class="contact_map">
-            <!-- 카카오맵 지도 -->
-            <div id="daumRoughmapContainer1740813845182" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+            <div>
+                <img src="./img/contact/map.png" alt="map">
+                <p class="map-name">Seoul | Jeonju</p>
+            </div>
         </section>
         <section class="main-contact">
             <div>
@@ -52,14 +61,27 @@
         <section class="contact_info_wrap">
             <h1>Our Contact Information</h1>
             <div class="contact_info">
-                <div class="contact_info_row">
-                    <div class="contact_info_element">
-                        <img src="./img/contact/phone.png" alt="phone">
-                        <div class="contact_info_text">
-                            <p>Phone</p>
-                            <h3>02-498-9879</h3>
-                        </div>
+                <div class="contact_info_element">
+                    <img src="./img/contact/phone.png" alt="phone">
+                    <div class="contact_info_text">
+                        <p>서울 1호점</p>
+                        <h3>02-498-9879</h3>
                     </div>
+                    <div class="contact_info_text">
+                        <p>서울 2호점</p>
+                        <h3>02-3409-9842</h3>
+                    </div>
+                    <div class="contact_info_text">
+                        <p>스플린트 밀링 센터</p>
+                        <h3>02-497-9878</h3>
+                    </div>
+                    <div class="contact_info_text">
+                        <p>전주점</p>
+                        <h3>063-245-2879</h3>
+                    </div>
+                </div>
+
+                <div class="contact_info_element_wrap">
                     <div class="contact_info_element">
                         <img src="./img/contact/mail.png" alt="mail">
                         <div class="contact_info_text">
@@ -67,12 +89,24 @@
                             <h3>hiortho@naver.com</h3>
                         </div>
                     </div>
+                    <div class="contact_info_element">
+                        <img src="./img/contact/like.png" alt="like">
+                        <div class="contact_info_text">
+                            <a href="https://www.instagram.com/hitech_korea/" target="_blank">@hitech_korea ></a>
+                            <a href="https://blog.naver.com/hiortho" target="_blank">Naver Blog ></a>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="contact_info_element">
                     <img src="./img/contact/address.png" alt="address">
                     <div class="contact_info_text">
-                        <p>Address</p>
+                        <p>서울점</p>
                         <h3>서울 성동구 광나루로 6길 35 우림이비즈센터 406호</h3>
+                    </div>
+                    <div class="contact_info_text">
+                        <p>전주점</p>
+                        <h3>전주시 덕진구 동부대로 611 상가 302호</h3>
                     </div>
                 </div>
             </div>
@@ -86,15 +120,5 @@
             <li>Follow us: @hitech</li>
         </ul>
     </footer>
-
-    <!-- 카카오맵 지도 스크립트 -->
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-    <script charset="UTF-8">
-        new daum.roughmap.Lander({
-            "timestamp" : "1740813845182",
-            "key" : "2n7pa"
-        }).render();
-    </script>
   </body>
 </html>

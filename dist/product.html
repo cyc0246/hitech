@@ -17,7 +17,14 @@
             <ul class="nav-menu">
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/process.html">Process</a></li>
-                <li><a href="#"><u>Product</u></a></li>
+                <li>
+                    <a href="#"><u>Product</u></a>
+                    <ul class="sub-menu">
+                        <li><a href="#thermo-splint">Thermo Splint</a></li>
+                        <li><a href="#metal-printing">Metal Printing</a></li>
+                        <li><a href="#anti-snoring">Anti Snoring</a></li>
+                    </ul>
+                </li>
                 <li><a href="/contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -25,7 +32,7 @@
 
     <div class="product-wrapper">
         <section class="full-container">
-            <article class="thermo-splint full-page">
+            <article class="thermo-splint full-page" id="thermo-splint">
                 <div>
                     <div class="product-text">
                         <h1>Thermo Splint</h1>
@@ -78,7 +85,7 @@
                 </div>
             </article>
 
-            <article class="metal-printing full-page">
+            <article class="metal-printing full-page" id="metal-printing">
                 <div>
                     <div class="product-text">
                         <h1>Metal Printing System</h1>
@@ -123,6 +130,57 @@
                     </ul>
                 </div>
             </article>
+
+            <article class="anti-snoring full-page" id="anti-snoring">
+                <div>
+                    <div class="product-text">
+                        <h1>Anti Snoring</h1>
+                        <h2>Good Sleep Appliance</h2>
+                        <ol>
+                            <li>
+                                <h3>A</h3>
+                                <p>신소재 Material Disc</p>
+                            </li>
+                            <li>
+                                <h3>B</h3>
+                                <p>Model-less (Scan)</p>
+                            </li>
+                            <li>
+                                <h3>C</h3>
+                                <p>CAD/CAM 방식으로 정밀성 증대</p>
+                            </li>
+                            <li>
+                                <h3>D</h3>
+                                <p>Memory Effect로 내면 몰딩 효과</p>
+                            </li>
+                            <li>
+                                <h3>E</h3>
+                                <p>체어타임 단축</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <ul class="thermo-slide">
+                        <button class="slide-button prev"></button>
+                        <div class="slide-container">
+                          <ul>
+                            <li>
+                                <img src="./img/product/anti-snoring-01.png" alt="anti-snoring">
+                            </li>
+                            <li>
+                                <img src="./img/product/anti-snoring-02.png" alt="anti-snoring">
+                            </li>
+                            <li>
+                                <img src="./img/product/anti-snoring-03.png" alt="anti-snoring">
+                            </li>
+                            <li>
+                                <img src="./img/product/anti-snoring-04.png" alt="anti-snoring">
+                            </li>
+                          </ul>
+                        </div>
+                        <button class="slide-button next"></button>
+                      </ul>
+                </div>
+            </article>
         </section>
 
         <!-- 모달 창 추가 -->
@@ -131,7 +189,7 @@
             <img id="modal-image" src="" alt="Expanded View">
         </div>
         
-        <section class="product-gallery">
+        <section class="product-gallery full-page">
             <article>
                 <h1>Fixed Appliance</h1>
                 <ul>
