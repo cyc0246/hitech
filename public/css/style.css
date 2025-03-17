@@ -48,7 +48,7 @@ p {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 1.2;
   font-weight: bold;
   color: #3F88BD;
@@ -336,7 +336,7 @@ section.about-section {
 }
 
 section.about-section > img {
-  margin: 120px 0 60px;
+  margin: 120px 0 32px;
   width: 100%;
   border-radius: 16px;
 }
@@ -349,7 +349,12 @@ section.about-section > img {
 }
 
 section.about-section .about-text h1 {
-  font-size: 40px;
+  font-size: 68px;
+  line-height: 1.02;
+}
+
+section.about-section .about-text h1:nth-of-type(1) {
+  color: #94C4E6;
 }
 
 section.about-section .about-text h2 {
@@ -602,6 +607,7 @@ section.process-description article:last-of-type img {
 .product-gallery {
   height: auto;
   overflow-y: auto;
+  background-color: #F1F3F8;
 }
 
 .product-gallery ul li img {
@@ -719,11 +725,26 @@ section.process-description article:last-of-type img {
 }
 
 .map-name {
+  width: calc(100% - 40px);
   position: absolute;
   bottom: 20px;
   left: 28px;
+}
+
+.map-name div h3 {
+  font-weight: bold;
   font-size: 18px;
   color: #3F88BD;
+}
+
+.map-name div p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #80919A;
+}
+
+.map-name div:nth-of-type(2) p {
+  margin-bottom: 0;
 }
 
 section.main-contact img {
@@ -747,7 +768,7 @@ section.main-contact img {
 .contact_info_wrap .contact_info {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -797,7 +818,7 @@ section.main-contact img {
 
 @media (max-width:1180px) and (min-width:0) {
   h1 {
-    font-size: 27px;
+    font-size: 34px;
   }
   
   p {
@@ -975,7 +996,7 @@ section.main-contact img {
   }
 
   section.process-description > h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
   
   section.process-description article {
@@ -1058,7 +1079,7 @@ section.main-contact img {
   }
 
   section.about-section .about-text h1 {
-    font-size: 32px;
+    font-size: 56px;
     text-align: center;
   }
 
@@ -1134,7 +1155,7 @@ section.main-contact img {
 
 @media (max-width:640px) and (min-width:0) {
   h1 {
-    font-size: 27px;
+    font-size: 29px;
   }
   
   p {
@@ -1281,7 +1302,7 @@ section.main-contact img {
     flex-direction: column;
     min-height: calc(100vh - 120px);
     justify-content: center;
-    gap: 40px;
+    gap: 32px;
     padding: 60px 0;
   }
   
@@ -1296,7 +1317,7 @@ section.main-contact img {
   }
 
   section.about-section .about-text h1 {
-    font-size: 27px;
+    font-size: 40px;
     text-align: center;
   }
 
@@ -1399,9 +1420,25 @@ section.main-contact img {
   }
 
   .map-name {
-    font-size: 16px;
-    bottom: 16px;
-    left: 20px;
+    width: calc(100% - 56px);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 28px;
+    border: 1px solid #DDE7F8;
+    border-radius: 16px;
+    margin-top: 20px;
+  }
+  
+  .map-name div h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .map-name div p {
+    font-size: 15px;
+    color: #3E3E3E;
   }
   
   .contact_info_wrap h1 {
