@@ -588,7 +588,7 @@ section.process-description article:last-of-type img {
 
 .product-wrapper section:last-child article {
   max-width: 1100px;
-  margin: 0 auto 100px;
+  margin: 100px auto;
 }
 
 .product-wrapper section:last-child article ul {
@@ -614,12 +614,6 @@ section.process-description article:last-of-type img {
   height: auto;
   overflow-y: auto;
   background-color: #F1F3F8;
-}
-
-.product-gallery > h1 {
-  text-align: center;
-  margin: 100px auto 40px;
-  font-size: 48px;
 }
 
 .product-gallery ul li img {
@@ -747,15 +741,20 @@ section.process-description article:last-of-type img {
   font-weight: bold;
   font-size: 18px;
   color: #3F88BD;
+  margin-top: 16px;
+}
+
+.map-name div h3 span {
+  color: #B8CFF6;
+}
+
+.map-name div:first-of-type h3 {
+  margin-top: 0;
 }
 
 .map-name div p {
   font-size: 16px;
   color: #80919A;
-}
-
-.map-name div:nth-of-type(2) p {
-  margin-bottom: 0;
 }
 
 section.main-contact img {
@@ -1056,12 +1055,7 @@ section.main-contact img {
   .product-wrapper section:last-child article {
     width: calc(100% - 80px);
     max-width: 1100px;
-    margin: 0 auto 60px;
-  }
-
-  .product-gallery > h1 {
-    font-size: 44px;
-    margin: 80px auto 40px;
+    margin: 60px auto;
   }
 
   /* contact page */
@@ -1169,11 +1163,6 @@ section.main-contact img {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 20px;
-  }
-
-  .product-gallery > h1 {
-    font-size: 40px;
-    margin: 60px auto 40px;
   }
 
   /* thermo 슬라이드 */
@@ -1447,10 +1436,6 @@ section.main-contact img {
     width: calc(100% - 56px);
   }
 
-  .product-gallery > h1 {
-    font-size: 34px;
-  }
-
   /* contact page */
 
   .contact_info_wrap {
@@ -1479,7 +1464,6 @@ section.main-contact img {
   
   .map-name div h3 {
     font-size: 17px;
-    margin-bottom: 4px;
   }
 
   .map-name div p {
