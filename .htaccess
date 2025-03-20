@@ -1,0 +1,21 @@
+# RewriteEngine 활성화 (URL 재작성 기능)
+RewriteEngine On
+
+# .html 확장자 숨기기 (example.com/contact → contact.html)
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# .htaccess 파일 접근 차단 (보안 강화)
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# 브라우저 캐시 활성화 (웹사이트 속도 최적화)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+</IfModule>

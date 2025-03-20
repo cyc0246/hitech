@@ -108,6 +108,7 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 header nav .nav-menu {
