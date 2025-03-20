@@ -186,6 +186,11 @@ footer ul {
   align-items: center;
 }
 
+footer ul li a {
+  color: #fff;
+  font-size: 13px;
+}
+
 /* main page */
 
 section.hero {
